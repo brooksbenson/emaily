@@ -8,7 +8,9 @@
     "yarn": "1.6.0"
   },
   "scripts": {
-    "dev": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"yarn run server\" \" yarn run client\" ",
+    "server": "nodemon index.js",
     "start": "node index.js"
   },
   "dependencies": {
@@ -17,5 +19,8 @@
     "mongoose": "^5.2.4",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0"
   }
 }
